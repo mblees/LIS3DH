@@ -12,6 +12,6 @@
 
 ## Benötigte Lib
 
-```
+``` 
 adafruit/Adafruit LIS3DH@^1.3.0
 ```

@@ -1,0 +1,4 @@
+LIS3DH	Keyword
+readAcceleration	Function
+getRelativeAcceleration	Function
+isMoving	Function

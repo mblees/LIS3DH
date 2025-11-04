@@ -1,0 +1,15 @@
+{
+  "name": "LIS3DH",
+  "version": "1.0.0",
+  "description": "C++ wrapper for the Adafruit LIS3DH accelerometer sensor",
+  "keywords": ["LIS3DH", "accelerometer", "sensor", "Adafruit"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mblees/LIS3DH.git"
+  },
+  "authors": [
+    { "name": "mblees" }
+  ],
+  "frameworks": ["arduino"],
+  "platforms": ["espressif32", "raspberrypi"]
+}
