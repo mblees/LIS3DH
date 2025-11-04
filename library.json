@@ -11,5 +11,8 @@
     { "name": "mblees" }
   ],
   "frameworks": ["arduino"],
-  "platforms": ["espressif32", "raspberrypi"]
+  "platforms": ["espressif32", "raspberrypi"],
+  "dependencies": [
+    "adafruit/Adafruit LIS3DH@^1.3.0"
+  ]
 }
