@@ -1,0 +1,51 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  platformio:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        board: [esp32dev, pico]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/cache@v4
+        with:
+          path: ~/.platformio
+          key: pio-${{ runner.os }}-${{ matrix.board }}-${{ hashFiles('library.json') }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PlatformIO
+        run: pip install platformio
+
+      - name: Build example
+        run: pio ci examples/BasicDemo --lib . --board ${{ matrix.board }}
+
+  arduino:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Lint library structure
+        uses: arduino/arduino-lint-action@v2
+        with:
+          library-manager: "false"
+          compliance: specification
+
+      - name: Build example with Arduino CLI
+        uses: arduino/compile-sketches@v1
+        with:
+          fqbn: arduino:avr:uno
+          sketch-paths: examples
+          libraries: |
+            - source-path: ./
+            - name: Adafruit LIS3DH
+            - name: Adafruit Unified Sensor
+            - name: Adafruit BusIO

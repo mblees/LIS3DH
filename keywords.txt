@@ -1,4 +1,6 @@
-LIS3DH	Keyword
-readAcceleration	Function
-getRelativeAcceleration	Function
-isMoving	Function
+LIS3DH	KEYWORD1
+begin	KEYWORD2
+readAcceleration	KEYWORD2
+getRelativeAcceleration	KEYWORD2
+isMoving	KEYWORD2
+LIS3DH_I2C_ADDRESS	LITERAL1
