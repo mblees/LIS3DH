@@ -2,8 +2,8 @@
 
 LIS3DH::LIS3DH() {}
 
-bool LIS3DH::begin() {
-    if (!lis3dh.begin(LIS3DH_I2C_ADDRESS)) {
+bool LIS3DH::begin(uint8_t address) {
+    if (!lis3dh.begin(address)) {
         Serial.println("Could not find LIS3DH sensor!");
         return false;
     }
@@ -30,7 +30,7 @@ float LIS3DH::getRelativeAcceleration() {
     float total_acc = sqrt(event.acceleration.x * event.acceleration.x +
                             event.acceleration.y * event.acceleration.y +
                             event.acceleration.z * event.acceleration.z);
-    total_acc = fabs(total_acc - 9.81);
+    total_acc = fabs(total_acc - SENSORS_GRAVITY_STANDARD);
     return total_acc;
 }
 

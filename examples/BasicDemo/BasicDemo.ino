@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include <LIS3DH.h>
+#include <lis3dh.h>
 
 LIS3DH lis3dh;
 
