@@ -8,6 +8,7 @@ jobs:
   platformio:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         board: [esp32dev, pico]
     steps:
