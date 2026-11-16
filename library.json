@@ -8,7 +8,7 @@
     "url": "https://github.com/mblees/LIS3DH.git"
   },
   "authors": [
-    { "name": "Marius Blees", "url": "https://github.com/mblees", "maintainer": true }
+    { "name": "M. Blees", "url": "https://github.com/mblees", "maintainer": true }
   ],
   "license": "MIT",
   "headers": "lis3dh.h",
